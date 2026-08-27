@@ -1,27 +1,21 @@
 # Correcciones del asesor
 
-Actualizado: sesión del 2026-08-27 (segunda pasada — verificación en código real de
-`C:\Proyects\TQA\tqaAuditorias` para los comentarios de la etapa BeGlobal/auditorías).
+Actualizado: sesión del 2026-08-27 (tercera pasada — integradas las respuestas de Xavier a las 8
+preguntas pendientes, más investigación bibliográfica/técnica verificada en fuentes oficiales para
+C-011, C-012 y C-015).
 
-Este documento reemplaza y actualiza la versión anterior (misma fecha, primera pasada). No se
-perdió nada del análisis previo — se conserva la ubicación exacta, el texto actual, el análisis y
-las preguntas de cada comentario, y se **añade** para cada uno: el comentario en bloque LaTeX
-literal, el texto sugerido listo para copiar en bloque LaTeX, el campo "Referencia necesaria" con
-justificación explícita, y — para los dos comentarios de la etapa BeGlobal que lo permitían —
-verificación directa contra el código fuente real del proyecto en `tqaAuditorias`.
+Este documento reemplaza y actualiza la versión anterior. No se perdió nada del análisis previo.
 
-**Ningún `.tex` fue modificado. Ningún commit ni push se realizó**, en ninguno de los tres
-repositorios (RTI académico, RTI-Documentacion, tqaAuditorias — este último ni siquiera se abrió
-en modo escritura, solo lectura).
+**Ningún `.tex`/`.bib` fue modificado. Ningún commit ni push se realizó.**
 
 ## Resumen
 
 ```text
 Comentarios encontrados: 16
-Listos para aplicar: 9   (C-001, C-002, C-003, C-004, C-006, C-008, C-009, C-014, C-016)
-Requieren información del autor: 6   (C-005, C-007, C-010, C-011, C-012, C-013)
-Requieren fuente: 1   (C-015 — además C-005 y C-013 requieren fuente/documento como parte de su resolución, contadas también en "información del autor" porque dependen de una respuesta previa de Xavier)
-Requieren verificación adicional: 1   (C-012, sobre si la actividad de AWS Lambda ocurrió tal como está descrita)
+Listos para aplicar: 13   (C-001, C-002, C-003, C-004, C-005, C-006, C-008, C-009, C-010, C-011, C-012, C-014, C-016)
+Parcialmente pendientes: 1   (C-007 — pendiente del diagrama que Xavier está elaborando)
+Diferidos a fase posterior (decisión de Xavier): 1   (C-013 — AE/OE)
+Listo para revisión de fuentes (no aplicado a texto/bib todavía): 1   (C-015 — bibliografía técnica)
 ```
 
 ## Tabla resumen
@@ -32,17 +26,17 @@ Requieren verificación adicional: 1   (C-012, sobre si la actividad de AWS Lamb
 | C-002 | Introducción | Quitar frase "Con el fin de mantener un orden lógico..." | LISTO PARA APLICAR |
 | C-003 | Introducción | Encabezado de página "Índice de figuras" desactualizado | LISTO PARA APLICAR |
 | C-004 | Introducción | Quitar frase redundante sobre agradecimientos/dedicatoria | LISTO PARA APLICAR |
-| C-005 | 1.1 Multicom Comercio | "¿En qué te basas...? Se necesitan evidencias" | REQUIERE RESPUESTA DEL AUTOR |
+| C-005 | 1.1 Multicom Comercio | "¿En qué te basas...? Se necesitan evidencias" | LISTO PARA APLICAR |
 | C-006 | 1.6 Área de sistemas | "una organización"→"la organización" | LISTO PARA APLICAR |
-| C-007 | Cap. 2 (inicio) | Sugerencia de gráfico/diagrama actividades-herramientas | REQUIERE RESPUESTA DEL AUTOR |
-| C-008 | 2.2.1 | "¿Cómo se implementó" la asignación automática de responsables? | **LISTO PARA APLICAR** (verificado en código) |
-| C-009 | 2.2.4 | JSON/AJAX/jQuery sin justificar | **LISTO PARA APLICAR** (verificado en código) |
-| C-010 | 2.4 Segundo proyecto | Falta ejemplo concreto | REQUIERE RESPUESTA DEL AUTOR |
-| C-011 | 2.4.6 Migración .NET | Por qué .NET 10, ¿estable? | REQUIERE RESPUESTA DEL AUTOR |
-| C-012 | 2.4.7 AWS Lambda | Misma pregunta + falta evidencia de que ocurrió | REQUIERE VERIFICACIÓN + RESPUESTA DEL AUTOR |
-| C-013 | 3 (intro capítulo) | Explicar AE/OE | REQUIERE RESPUESTA DEL AUTOR (documento oficial) |
+| C-007 | Cap. 2 (inicio) | Sugerencia de gráfico/diagrama actividades-herramientas | PENDIENTE DE DIAGRAMA |
+| C-008 | 2.2.1 | "¿Cómo se implementó" la asignación automática de responsables? | LISTO PARA APLICAR (verificado en código) |
+| C-009 | 2.2.4 | JSON/AJAX/jQuery sin justificar | LISTO PARA APLICAR (verificado en código) |
+| C-010 | 2.4 Segundo proyecto | Falta ejemplo concreto | LISTO PARA APLICAR |
+| C-011 | 2.4.6 Migración .NET | Por qué .NET 10, ¿estable? | LISTO PARA APLICAR / FUENTE VERIFICADA |
+| C-012 | 2.4.7 AWS Lambda | Misma pregunta + falta evidencia de que ocurrió | LISTO PARA APLICAR / VERSIÓN VERIFICADA |
+| C-013 | 3 (intro capítulo) | Explicar AE/OE | PENDIENTE PARA FASE POSTERIOR |
 | C-014 | 3.2 Conclusiones | Mayúsculas/acento "Ingeniería en Sistemas Computacionales" | LISTO PARA APLICAR |
-| C-015 | Bibliografía | Falta bibliografía técnica | REQUIERE FUENTE |
+| C-015 | Bibliografía | Falta bibliografía técnica | LISTO PARA REVISIÓN DE FUENTES |
 | C-016 | `tesis.cls` (carta institucional) | Incluir título M. en C. del director | LISTO PARA APLICAR |
 
 ---
@@ -177,14 +171,12 @@ De manera complementaria, finalmente se anexan las cartas laborales como evidenc
 ### Referencia necesaria
 No.
 
-### Pregunta para el autor
-¿Te parece bien el ajuste de conector ("De manera complementaria, finalmente..."), o prefieres el
-resultado literal de solo aceptar el `\deleted` sin tocar nada más ("De manera complementaria,
-Finalmente, se anexan...")? Es la única razón por la que no lo marco 100% listo sin más — es una
-microdecisión de estilo, no bloquea nada.
+### Respuesta del autor
+Confirmado: ajuste de texto (no el resultado literal del `\deleted` a secas). Se conserva la
+propuesta tal como estaba.
 
 ### Estado
-**LISTO PARA APLICAR** (con una preferencia de estilo opcional pendiente de confirmar).
+**LISTO PARA APLICAR.**
 
 ---
 
@@ -208,30 +200,31 @@ BeGlobal); tampoco hay repositorio de Multicom/Wali Fintech disponible para veri
 Que la afirmación "robusta y estable" tenga respaldo — ya existe una cita en el documento, pero
 respalda la oración siguiente, no esta afirmación específica.
 
+### Respuesta del autor
+Confirmado: "robusta y estable" era una apreciación personal, sin dato concreto que la sustente.
+Instrucción: eliminar/suavizar ese tipo de afirmaciones en vez de presentarlas como hecho
+institucional.
+
 ### Solución
-Reubicar la cita ya existente para que respalde directamente la afirmación, y dejar claro que es
-una caracterización de la propia empresa (fuente institucional), no una evaluación independiente
-del autor — salvo que Xavier confirme que tiene una base distinta.
+Se elimina el adjetivo subjetivo "robusta y estable" (no se reemplaza por ninguna otra
+caracterización sin sustento, como pidió Xavier). Queda solo la descripción factual de lo que hace
+la plataforma, respaldada por la cita institucional que ya existía.
 
 ### Texto sugerido en LaTeX
 ```latex
-Según su información institucional, la organización cuenta con una plataforma orientada a la venta de productos de prepago, tiempo aire electrónico, pago de servicios y compra de pines electrónicos, la cual describe como robusta y estable.\cite{MulticomSobreMulticomServicios} Esta plataforma ha sido desarrollada y fortalecida a lo largo de los años, permitiendo a la empresa adaptarse a las necesidades de un mercado cambiante y ofrecer soluciones
-tecnológicas confiables a sus clientes.
+La organización cuenta con una plataforma orientada a la venta de productos de prepago, tiempo aire electrónico, pago de servicios y compra de pines electrónicos.\cite{MulticomSobreMulticomServicios}
+Esta plataforma ha sido desarrollada y fortalecida a lo largo de los años, permitiendo a la empresa adaptarse a las necesidades de un mercado cambiante y ofrecer soluciones
+tecnológicas confiables a sus clientes.\cite{MulticomSobreMulticomServicios}
 ```
+(la única diferencia respecto al texto actual es la eliminación de "robusta y estable," y se
+agrega la cita también a la primera oración, ya que ambas describen lo mismo respaldado por la
+misma fuente)
 
 ### Referencia necesaria
-Sí (probablemente) — ya existe (`MulticomSobreMulticomServicios`), el ajuste es de ubicación/
-atribución, no de agregar una fuente nueva.
-
-### Preguntas para el autor
-1. ¿"Robusta y estable" viene realmente de lo que dice la página web de Multicom, o es tu
-   impresión personal trabajando ahí?
-2. Si es personal, ¿tienes algún dato concreto que la sustente (tiempo de actividad del servicio,
-   volumen de operaciones, ausencia de caídas durante tu periodo)? Si no, mejor suavizar o quitar
-   el adjetivo.
+No se agrega ninguna nueva — se reutiliza `MulticomSobreMulticomServicios`, ya existente.
 
 ### Estado
-**REQUIERE RESPUESTA DEL AUTOR.**
+**LISTO PARA APLICAR.**
 
 ---
 
@@ -282,24 +275,40 @@ Ubicación: `Capitulo2.tex`, línea 12 (antes de `\section{Contexto laboral}`).
 Un elemento visual (tabla, diagrama o línea de tiempo) que resuma la relación entre actividades,
 herramientas y aprendizajes de ambas etapas.
 
+### Respuesta del autor
+Xavier está elaborando un diagrama que se incorporará como imagen en este apartado. Por lo tanto:
+este comentario se deja **parcialmente resuelto** — no se marca como completamente atendido hasta
+que la imagen exista y se incorpore al `.tex`. No se inventa el contenido del diagrama.
+
 ### Solución
-Recomiendo una tabla (más simple de mantener en LaTeX puro que un diagrama) con columnas: Etapa |
-Actividad principal | Herramientas | Aprendizaje/competencia. No propongo el contenido todavía
-porque depende de decisiones tuyas (ver preguntas).
+Mientras se genera la imagen, se puede dejar preparado el texto que la introduce y el que la
+comenta después (esto sí se puede redactar ya, sin conocer el contenido exacto del diagrama), y un
+`\begin{figure}` de marcador de posición con la inclusión de la imagen comentada, para que quede
+listo para activar en cuanto Xavier entregue el archivo.
 
 ### Texto sugerido en LaTeX
-No aplica todavía — pendiente de tu decisión de formato antes de redactarlo.
+Sustituye el bloque `\added[id=TUT]{...}` completo por:
+```latex
+Con el fin de visualizar de manera más clara la relación entre las actividades realizadas, las herramientas utilizadas y los aprendizajes adquiridos en ambas etapas, se presenta a continuación un diagrama resumen (Figura~\ref{fig:resumen-actividades}).
+
+\begin{figure}[H]
+    \centering
+    % TODO(C-007): agregar \includegraphics una vez que exista el archivo del diagrama
+    \caption{Relación entre actividades, herramientas y aprendizajes adquiridos.}
+    \label{fig:resumen-actividades}
+\end{figure}
+
+Como se observa en la figura anterior, cada actividad estuvo asociada a herramientas específicas que, en conjunto, permitieron consolidar los aprendizajes descritos a lo largo de este capítulo.
+```
+El `\caption` y el texto introductorio/posterior son una propuesta editable — ajústalos cuando
+tengas el diagrama definitivo si el enfoque real del diagrama termina siendo distinto.
 
 ### Referencia necesaria
 No.
 
-### Preguntas para el autor
-1. ¿Tabla, diagrama (¿con qué herramienta: TikZ o imagen externa?) o línea de tiempo?
-2. ¿Una tabla por etapa o una sola comparativa?
-3. ¿Nivel de detalle por actividad general o por sub-actividad?
-
 ### Estado
-**REQUIERE RESPUESTA DEL AUTOR** (decisión de formato).
+**PENDIENTE DE DIAGRAMA** (texto de acompañamiento listo; falta la imagen para completar y para
+poder marcar el comentario como atendido).
 
 ---
 
@@ -450,38 +459,33 @@ repositorio de código disponible para esta sesión).
 Un ejemplo concreto de qué hace la plataforma o qué tipo de microservicio, en vez de la descripción
 abstracta actual.
 
+### Respuesta del autor
+Confirmado: **no debe aparecer el nombre "Wali Fintech"** (confidencial). Sí se pueden mencionar
+conceptos técnicos generales (arquitectura de microservicios, C#, .NET, Clean Architecture, APIs
+REST, servicios backend, etc.), usando expresiones como "la plataforma", "el sistema", "la
+solución backend", "los microservicios del proyecto" — sin identificadores internos.
+
 ### Solución
-**Nota de confidencialidad, antes de proponer texto:** según la evidencia ya documentada en
-`RTI-Documentacion/analisis/ACADEMIC_DIAGNOSIS.md` (hallazgo P1-2), el proyecto real se llama
-"Wali Fintech" y los microservicios documentados en las cartas/CV son Clients, Wallet, Auth y
-Access — ninguno aparece hoy en el documento. No sé si es una omisión deliberada por
-confidencialidad o simplemente no se incluyó. Esto determina el texto exacto.
+Se da un ejemplo concreto usando descripciones funcionales genéricas (qué hace un microservicio,
+no cómo se llama), suficientes para mostrar profundidad técnica sin revelar el nombre del proyecto
+ni identificadores internos (evito términos como "Wallet", "Auth", "Access", "Clients" tal cual
+aparecen en el código/evidencia, y los reemplazo por su función).
 
 ### Texto sugerido en LaTeX
-Dos versiones, según tu respuesta:
-
-**Si se puede nombrar el proyecto/microservicios:**
 ```latex
-El segundo proyecto corresponde al desarrollo y mantenimiento de una plataforma orientada a servicios digitales, construida bajo una arquitectura de microservicios, entre ellos los orientados a la gestión de clientes, monederos digitales (wallet), autenticación y control de acceso. En este entorno se
-  trabajaba con APIs REST, reglas de negocio distribuidas por servicio y persistencia de datos...
+El segundo proyecto corresponde al desarrollo y mantenimiento de la solución backend de una plataforma orientada a servicios financieros, construida bajo una arquitectura de microservicios desarrollados en C\# y .NET, siguiendo principios de Arquitectura Limpia. Entre los microservicios del proyecto se encontraban componentes responsables, por ejemplo, de la gestión de clientes y del manejo de saldos y transacciones de los usuarios.\comment[id=XAV]{Verificar que esta descripción funcional no revele información confidencial adicional antes de aceptar.} En este entorno se
+  trabajaba con APIs REST, reglas de negocio distribuidas por servicio y persistencia de datos, por lo que era indispensable mantener consistencia en contratos, validaciones y manejo de
+  errores para asegurar un funcionamiento estable.
 ```
-
-**Si se debe mantener genérico por confidencialidad:**
-```latex
-El segundo proyecto corresponde al desarrollo y mantenimiento de una plataforma orientada a servicios digitales, construida bajo una arquitectura de microservicios, entre ellos uno responsable de gestionar el saldo y las transacciones de cuentas digitales de los usuarios. En este entorno se
-  trabajaba con APIs REST, reglas de negocio distribuidas por servicio y persistencia de datos...
-```
+Dejé un `\comment[id=XAV]{...}` de precaución dentro del texto sugerido — bórralo si al leerlo
+confirmas que no hay ningún detalle adicional que prefieras ocultar; lo incluyo porque la decisión
+de qué tan específico ser es tuya, no mía, y prefiero que lo veas explícitamente antes de aceptar.
 
 ### Referencia necesaria
 No.
 
-### Preguntas para el autor
-1. ¿Se puede nombrar "Wali Fintech" y los microservicios (Clients, Wallet, Auth, Access), o hay
-   confidencialidad de por medio con Multicom/el cliente?
-2. Si sí, ¿hay alguna funcionalidad específica de la que te sientas cómodo dando más detalle?
-
 ### Estado
-**REQUIERE RESPUESTA DEL AUTOR.**
+**LISTO PARA APLICAR** (revisar el `\comment[id=XAV]` de precaución antes de aceptar definitivamente).
 
 ---
 
@@ -505,25 +509,48 @@ disponible.
 Justificar por qué se migró específicamente hasta .NET 10 y no una versión LTS anterior, y si ya
 es estable / si había una funcionalidad indispensable que la requiriera.
 
+### Respuesta del autor
+Xavier explicó que el pipeline usa GitHub Actions para compilar/validar antes de desplegar hacia
+AWS App Runner, y que la migración se debió a que el entorno usado para proyectos .NET 6 llegó a
+su fin de soporte/compatibilidad. Pidió verificar técnicamente antes de redactar, sin afirmar que
+"GitHub Actions dejó de compilar .NET 6" si eso es impreciso.
+
+### Verificación técnica (fuentes oficiales)
+Se investigó y se confirma lo siguiente, con precisión sobre qué corresponde a cada causa:
+
+1. **.NET 6 alcanzó su fin de soporte oficial el 12 de noviembre de 2024** (Microsoft, ciclo LTS de
+   36 meses) — a partir de esa fecha ya no recibe parches de seguridad ni soporte técnico.
+2. **No es GitHub Actions quien deja de "compilar" .NET 6** — `actions/setup-dotnet` puede instalar
+   cualquier SDK, incluidos los ya sin soporte; esa no es la causa técnica real y no debe afirmarse
+   así.
+3. **La causa concreta ligada a AWS App Runner (donde se ejecutan los microservicios) sí es real y
+   más específica de lo que Xavier recordaba:** App Runner únicamente ofreció **.NET 6** como
+   runtime administrado (managed runtime) para despliegue desde código fuente, y AWS anunció el
+   **fin de soporte de ese runtime administrado de .NET 6 a partir del 1 de diciembre de 2025**,
+   sin planes de agregar versiones más recientes de .NET como runtime administrado. Es decir: el
+   camino de despliegue basado en código fuente de App Runner queda limitado a .NET 6 y en vías de
+   retirarse — la causa de fondo no es un límite de GitHub Actions, sino del propio servicio de
+   despliegue en AWS combinado con el fin de soporte de Microsoft sobre .NET 6.
+4. **.NET 10 es la versión LTS vigente más reciente** al momento de esta migración (lanzada
+   noviembre de 2025, con soporte hasta noviembre de 2028) — es la elección lógica para no repetir
+   pronto el mismo problema de fin de soporte.
+
 ### Solución
-Agregar 1-2 oraciones con el motivo real de la elección de versión.
+Reescribir el párrafo con la causa técnica verificada (fin de soporte de .NET 6 + límite del
+runtime administrado de App Runner), no con una atribución imprecisa a GitHub Actions.
 
 ### Texto sugerido en LaTeX
-No propongo texto todavía — no hay evidencia en `_analisis_texto/` (la carta solo dice que se
-migró "hacia versiones más recientes como .NET Core 10", sin explicar el porqué) y sin el
-repositorio de código de Multicom no puedo verificarlo de forma independiente.
+```latex
+Dentro de las actividades del proyecto se participó en tareas de actualización tecnológica, enfocadas en migrar servicios desarrollados en .NET 6 hacia .NET 10. Esta migración fue necesaria porque .NET 6 alcanzó su fin de soporte oficial en noviembre de 2024\cite{dotnet_support_policy}, dejando de recibir actualizaciones de seguridad, y porque AWS App Runner —el servicio donde se ejecutan los microservicios del proyecto— únicamente ofrecía a .NET 6 como runtime administrado, anunciando además el fin de soporte de dicho runtime sin planes de incorporar versiones más recientes de .NET\cite{aws_apprunner_dotnet_eos}. Por ello se optó por migrar directamente a .NET 10, la versión de soporte a largo plazo (LTS) más reciente disponible al momento de la actualización, aprovechando el flujo de integración continua configurado en GitHub Actions, que compila y valida la solución antes de continuar con el proceso de despliegue. Esta actualización requirió identificar incompatibilidades, reemplazar funciones obsoletas y ajustar dependencias para mantener la correcta compilación y ejecución de
+  los servicios. También fue necesario revisar referencias a librerías y actualizar configuraciones para que el código se alineara con los cambios de la nueva versión.
+```
 
 ### Referencia necesaria
-No — es una decisión técnica del proyecto, no una afirmación general sobre .NET.
-
-### Preguntas para el autor
-1. ¿Por qué se eligió migrar hasta .NET 10 específicamente (y no una LTS anterior como .NET 8)?
-2. ¿La decisión fue tuya o del equipo/liderazgo técnico?
-3. ¿Había alguna funcionalidad concreta de .NET 10 necesaria, o fue política general de "mantenerse
-   en la versión más reciente"?
+Sí — ya verificadas, no inventadas. Ver entradas `.bib` propuestas en la sección de C-015 al final
+de este documento (`dotnet_support_policy`, `aws_apprunner_dotnet_eos`).
 
 ### Estado
-**REQUIERE RESPUESTA DEL AUTOR.**
+**LISTO PARA APLICAR / FUENTE VERIFICADA.**
 
 ---
 
@@ -545,28 +572,44 @@ disponible para verificar.
 ### Qué está solicitando el asesor
 Misma pregunta que C-011, aplicada a esta migración de runtime.
 
+### Respuesta del autor
+Confirmado: sí ocurrió. Xavier no recordaba con certeza la versión inicial exacta (mencionó
+"aproximadamente Node.js 19.x o 20.x") y pidió verificar antes de afirmar una versión concreta.
+
+### Verificación técnica (fuentes oficiales de AWS)
+1. **Node.js 19.x nunca fue un runtime de AWS Lambda.** Lambda solo ofrece runtimes administrados
+   para versiones LTS de Node.js (18, 20, 22, 24...); la versión 19 fue una release de corta
+   duración (STS) que nunca llegó a LTS y nunca estuvo disponible como runtime de Lambda. Por lo
+   tanto, **la versión inicial que ya estaba en el documento (20.x) es la técnicamente correcta**,
+   no hace falta cambiarla — el recuerdo de "19.x" no es consistente con lo que AWS Lambda ofrece.
+2. **Node.js 20.x en AWS Lambda tiene fin de soporte programado**, en fases: deja de recibir
+   parches de seguridad el 30 de abril de 2026; ya no se podrán crear funciones nuevas con ese
+   runtime desde el 1 de junio de 2026; ya no se podrán actualizar funciones existentes desde el 1
+   de julio de 2026.
+3. **Node.js 24.x sí es un runtime real y vigente de AWS Lambda**, disponible desde noviembre de
+   2025, con soporte de seguridad hasta abril de 2028 — es, además, el runtime de Node.js más
+   reciente disponible en Lambda al momento de esta migración.
+
+**Conclusión: "de la versión 20.x a la 24.x", como ya decía el documento original, es correcto y
+no requiere cambio de números de versión** — solo hacía falta la justificación, que ahora sí está
+verificada.
+
 ### Solución
-Antes de justificar la versión, hace falta confirmar que la actividad ocurrió tal como está
-descrita: **no aparece en ninguna de las cartas, el informe de actividades ni el CV** en
-`_analisis_texto/` (toda la evidencia sobre AWS ahí se refiere a API Gateway, CDK, Route53,
-AppRunner y Cognito — nunca a Lambda/Node.js).
+Agregar la justificación verificada sin alterar los números de versión ya correctos.
 
 ### Texto sugerido en LaTeX
-No propongo texto todavía — depende de la verificación.
+```latex
+Como parte de actividades de mantenimiento y actualización tecnológica, se realizó la migración de funciones serverless desplegadas en AWS Lambda, actualizando el runtime de Node.js
+  de la versión 20.x a la 24.x. Esta actualización se realizó en anticipación al fin de soporte del runtime de Node.js 20.x en AWS Lambda, a partir del cual dicho runtime deja de recibir parches de seguridad\cite{aws_lambda_runtimes}, optando por migrar directamente a la versión 24.x, el runtime de Node.js más reciente disponible en AWS Lambda al momento de la actualización\cite{aws_lambda_nodejs24}. Esta tarea tuvo como objetivo mantener compatibilidad con versiones soportadas, reducir riesgos por obsolescencia y asegurar continuidad operativa en los
+  componentes que dependen de estas funciones.
+```
 
 ### Referencia necesaria
-No para la justificación de versión (experiencia propia). Si se agrega contexto sobre la política
-de deprecación de runtimes de AWS Lambda, ahí sí convendría una fuente oficial de AWS — no se buscó
-todavía porque depende de si esta sección se conserva.
-
-### Preguntas para el autor
-1. **Verificación:** ¿esta migración realmente ocurrió como se describe? No aparece en ninguna
-   carta/CV.
-2. Si sí ocurrió: ¿por qué la versión 24.x específicamente?
-3. ¿Fue decisión tuya o AWS forzó el fin de soporte de la versión anterior (común en Lambda)?
+Sí — ya verificadas. Ver entradas `.bib` propuestas en C-015 (`aws_lambda_runtimes`,
+`aws_lambda_nodejs24`).
 
 ### Estado
-**REQUIERE VERIFICACIÓN + REQUIERE RESPUESTA DEL AUTOR.**
+**LISTO PARA APLICAR / VERSIÓN VERIFICADA.**
 
 ---
 
@@ -600,15 +643,11 @@ institucional.
 ### Referencia necesaria
 Sí — documento oficial del programa (institucional, no bibliografía externa).
 
-### Preguntas para el autor
-1. ¿Tienes el documento oficial (o el contenido de los videos ya referenciados en `Capitulo5.tex`)
-   con el listado real de AE/OE del programa de Ingeniería en Sistemas Computacionales?
-2. ¿Hay algún AE/OE que sientas más relacionado con tu experiencia? (varias competencias ya listadas
-   en la sección "Conclusiones" podrían conectarse una vez que tengamos el listado oficial, en vez
-   de escribir contenido nuevo desde cero).
+### Respuesta del autor
+"Este comentario lo atenderemos después." No se resuelve en esta sesión.
 
 ### Estado
-**REQUIERE RESPUESTA DEL AUTOR** (documento oficial).
+**PENDIENTE PARA FASE POSTERIOR.**
 
 ---
 
@@ -664,33 +703,179 @@ Ubicación: `tesis.tex`, línea 142.
 `referencias.bib` solo tiene 2 citas activas, ambas al mismo sitio web de Multicom. No hay fuentes
 técnicas sobre Arquitectura Limpia, MVC, REST, microservicios, etc.
 
-### Solución
-Agregar entradas `.bib` reales (no inventadas) para los conceptos técnicos generales usados en el
-documento. Ver detalle completo en `RTI-Documentacion/bibliografia/BIBLIOGRAPHY_AUDIT.md`.
+### Respuesta del autor
+Las secciones se redactaron originalmente desde experiencia propia, sin fuentes específicas.
+Xavier pidió investigar fuentes confiables (priorizando libros/documentación oficial sobre blogs),
+evaluó como material complementario `https://milanjovanovic.tech/pragmatic-clean-architecture`
+pero pidió explícitamente no depender solo de un blog, y autorizó investigar en internet para esta
+tarea.
 
-### Texto sugerido en LaTeX
-No se genera ninguna entrada `.bib` todavía — regla explícita de no inventar referencias, DOIs,
-autores ni libros.
+### Investigación realizada (fuentes verificadas, con motivo de por qué sí/no hace falta cada una)
 
-### Uso dentro del `.tex` (una vez que existan las entradas)
+| Concepto | ¿Necesita referencia? | Fragmento que la necesita | Motivo |
+|---|---|---|---|
+| Arquitectura Limpia | Opcional / recomendable | Menciones en Capitulo1.tex ("siguiendo principios de Arquitectura Limpia") y Capitulo2.tex — se usa como principio general de diseño, no solo como experiencia propia | Es una afirmación técnica general (qué es y qué implica el patrón), no una descripción de una tarea personal — se beneficia de fuente |
+| MVC | Opcional | Capitulo1.tex/Capitulo2.tex mencionan MVC como patrón usado, sin definirlo | El documento ya explica en prosa propia cómo se aplicó (vistas/JSP, controladores/Servlets, modelo/MySQL) — la experiencia está bien descrita; una fuente es un respaldo académico adicional, no indispensable |
+| REST | Opcional | Menciones de "APIs REST" en varios capítulos, sin definir el estilo arquitectónico | Se usa como término técnico estándar, ampliamente conocido — no es una afirmación institucional ni controvertida, pero para un documento académico formal es una fuente barata de agregar con alto valor (el propio Fielding) |
+| Microservicios | Opcional | Menciones de "arquitectura de microservicios" en varios capítulos | Igual que REST: término técnico estándar, se beneficia de una fuente académica reconocida si se quiere formalizar |
+
+**No se recomienda agregar una referencia después de cada mención de estas tecnologías** — como
+pidió Xavier, las descripciones de lo que él hizo personalmente no necesitan cita. Las referencias
+abajo se proponen para las oraciones puntuales donde el documento hace una afirmación general sobre
+qué es o para qué sirve el patrón/estilo, no para cada aparición del término.
+
+### Tabla de fuentes recomendadas
+
+| Concepto | Fuente recomendada | Tipo | ¿La recomiendo? |
+|---|---|---|---|
+| Clean Architecture | Robert C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*, Pearson, 2017, ISBN 978-0-13-449416-6 | Libro | Sí |
+| MVC | G. E. Krasner, S. T. Pope, "A cookbook for using the model–view–controller user interface paradigm in Smalltalk-80", *Journal of Object-Oriented Programming*, vol. 1, no. 3, pp. 26–49, 1988 | Artículo (fuente académica original del patrón) | Sí |
+| REST | R. T. Fielding, *Architectural Styles and the Design of Network-based Software Architectures*, Tesis doctoral, University of California, Irvine, 2000 | Tesis doctoral (fuente primaria, la más citada en la literatura sobre REST) | Sí |
+| Microservicios | Sam Newman, *Building Microservices: Designing Fine-Grained Systems*, 2.ª ed., O'Reilly Media, 2021, ISBN 978-1-492-03402-5 | Libro | Sí |
+
+El blog sugerido por Xavier (`milanjovanovic.tech/pragmatic-clean-architecture`) no se usa como
+fuente citable — es contenido práctico útil para consulta personal, pero para el documento
+académico se prioriza la fuente primaria (Martin, autor original del término y del libro de
+referencia).
+
+### Texto sugerido por concepto
+
+#### Arquitectura Limpia
+
+**Texto actual** (`Capitulo1.tex`, dentro de "Área de sistemas y desarrollo de software"):
 ```latex
-...siguiendo principios de Arquitectura Limpia\cite{clean_architecture} para separar responsabilidades entre las distintas capas del sistema.
+Se participó en la
+creación, mantenimiento y mejora de APIs REST desarrolladas con C\# y .NET, siguiendo principios de Arquitectura Limpia para separar responsabilidades entre las distintas capas del
+sistema.
 ```
-(ejemplo de dónde iría la cita, no la clave real todavía)
 
-### Referencia necesaria
-Sí, es justamente el objeto de esta corrección.
+**Problema:** se nombra el patrón pero no qué principio general lo sustenta.
 
-### Preguntas para el autor
-1. ¿Tienes en mente alguna fuente que hayas usado realmente para Arquitectura Limpia, MVC o REST
-   (libro de alguna materia, documentación oficial de Microsoft/.NET, "Clean Architecture" de
-   Robert C. Martin, algún curso)? Si la usaste de verdad, la citamos — si no, buscamos opciones
-   juntos y las revisas antes de que se agreguen.
-2. ¿`Kaplan2009` (ya existe en el `.bib`, sin usar) se conecta con "Análisis de requerimientos y
-   diseño inicial de base de datos" del Capítulo 2, o se elimina por no ser relevante?
+**Texto sugerido:**
+```latex
+Se participó en la
+creación, mantenimiento y mejora de APIs REST desarrolladas con C\# y .NET, siguiendo principios de Arquitectura Limpia\cite{martin2017cleanarchitecture} para separar responsabilidades entre las distintas capas del
+sistema, manteniendo las reglas de negocio independientes de detalles técnicos como la base de datos o el framework utilizado.
+```
+
+**Referencia:** `\cite{martin2017cleanarchitecture}`
+
+#### MVC
+
+**Texto actual** (`Capitulo2.tex`, sección 2.2): ya está bien explicado en prosa propia
+(vistas=JSP, controlador=Servlets, modelo=acceso a datos en MySQL) — **no se propone agregar una
+cita aquí**, porque la explicación ya es específica de lo que Xavier implementó, no una definición
+genérica del patrón. Si Xavier prefiere reforzarlo académicamente de todos modos, se puede agregar
+la cita a Krasner & Pope en la primera mención de MVC (`Capitulo2.tex`, línea 28: "implementando
+una organización basada en MVC (Modelo--Vista--Controlador)"):
+```latex
+implementando una organización basada en MVC (Modelo--Vista--Controlador)\cite{krasner1988mvc}.
+```
+
+**Referencia:** `\cite{krasner1988mvc}` (opcional, no indispensable).
+
+#### REST
+
+**Texto actual** (primera mención, `Capitulo1.tex`): "creación, mantenimiento y mejora de APIs
+REST desarrolladas con C\# y .NET..."
+
+**Texto sugerido** (agregar la cita en la primera mención del documento, no en cada aparición):
+```latex
+Se participó en la
+creación, mantenimiento y mejora de APIs REST\cite{fielding2000rest} desarrolladas con C\# y .NET, siguiendo principios de Arquitectura Limpia...
+```
+
+**Referencia:** `\cite{fielding2000rest}`
+
+#### Microservicios
+
+**Texto actual** (`Capitulo2.tex`, sección 2.4): "construida bajo una arquitectura de
+microservicios."
+
+**Texto sugerido** (primera mención):
+```latex
+El segundo proyecto corresponde al desarrollo y mantenimiento de la solución backend de una plataforma orientada a servicios financieros, construida bajo una arquitectura de microservicios\cite{newman2021microservices} desarrollados en C\# y .NET...
+```
+
+**Referencia:** `\cite{newman2021microservices}`
+
+### Entradas `.bib` propuestas (para `referencias.bib`)
+
+```bibtex
+@book{martin2017cleanarchitecture,
+  author    = {Martin, Robert C.},
+  title     = {Clean Architecture: A Craftsman's Guide to Software Structure and Design},
+  publisher = {Pearson},
+  year      = {2017},
+  isbn      = {978-0-13-449416-6}
+}
+
+@article{krasner1988mvc,
+  author  = {Krasner, Glenn E. and Pope, Stephen T.},
+  title   = {A Cookbook for Using the Model-View-Controller User Interface Paradigm in Smalltalk-80},
+  journal = {Journal of Object-Oriented Programming},
+  volume  = {1},
+  number  = {3},
+  pages   = {26--49},
+  year    = {1988}
+}
+
+@phdthesis{fielding2000rest,
+  author = {Fielding, Roy Thomas},
+  title  = {Architectural Styles and the Design of Network-based Software Architectures},
+  school = {University of California, Irvine},
+  year   = {2000},
+  url    = {https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}
+}
+
+@book{newman2021microservices,
+  author    = {Newman, Sam},
+  title     = {Building Microservices: Designing Fine-Grained Systems},
+  edition   = {2},
+  publisher = {O'Reilly Media},
+  year      = {2021},
+  isbn      = {978-1-492-03402-5}
+}
+
+@online{dotnet_support_policy,
+  author  = {{Microsoft}},
+  title   = {.NET and .NET Core Official Support Policy},
+  url     = {https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core},
+  urldate = {2026-08-27}
+}
+
+@online{aws_apprunner_dotnet_eos,
+  author  = {{Amazon Web Services}},
+  title   = {Announcement: App Runner Sets End of Support for Specific Runtime Versions in December 2025},
+  url     = {https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2025-08-28-runtime-eos-update.html},
+  urldate = {2026-08-27}
+}
+
+@online{aws_lambda_runtimes,
+  author  = {{Amazon Web Services}},
+  title   = {Lambda Runtimes},
+  url     = {https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html},
+  urldate = {2026-08-27}
+}
+
+@online{aws_lambda_nodejs24,
+  author  = {{Amazon Web Services}},
+  title   = {AWS Lambda Adds Support for Node.js 24},
+  url     = {https://aws.amazon.com/about-aws/whats-new/2025/11/aws-lambda-nodejs-24},
+  urldate = {2026-08-27}
+}
+```
+
+Todos los campos (autor, título, año, editorial/institución, URL, fecha de consulta) fueron
+verificados contra las fuentes oficiales antes de proponerse — ninguno fue inventado.
+
+### Sobre `Kaplan2009` (entrada existente, sin usar)
+Pendiente de tu respuesta — no la tenías, por lo que queda para una próxima ronda: ¿se conecta con
+"Análisis de requerimientos y diseño inicial de base de datos" del Capítulo 2, o se elimina?
 
 ### Estado
-**REQUIERE FUENTE.**
+**LISTO PARA REVISIÓN DE FUENTES** (no aplicado a `referencias.bib` ni a los `.tex` todavía — falta
+tu aprobación de las 4 fuentes y de dónde insertar cada cita).
 
 ---
 
@@ -744,20 +929,17 @@ No.
 
 # Preguntas que necesito responder
 
-Consolidado, agrupadas por comentario:
+Todas las preguntas de la ronda anterior fueron respondidas. Quedan solo estas, nuevas o
+derivadas de las respuestas:
 
-- **C-004:** ¿ajuste de conector o texto literal tras aceptar el `\deleted`? (no bloqueante)
-- **C-005:** ¿"robusta y estable" viene de la web de Multicom o es tu impresión? ¿Algún dato que la
-  sustente?
-- **C-007:** ¿tabla, diagrama o línea de tiempo? ¿por etapa o comparativa? ¿nivel de detalle?
-- **C-010:** ¿se puede nombrar "Wali Fintech" y los microservicios, o hay confidencialidad?
-  ¿alguna funcionalidad específica que puedas detallar?
-- **C-011:** ¿por qué .NET 10 específicamente? ¿decisión tuya o del equipo?
-- **C-012:** ¿la migración de AWS Lambda realmente ocurrió? Si sí, ¿por qué 24.x y quién decidió?
-- **C-013:** ¿tienes el documento oficial (o el contenido de los videos referenciados) con el
-  listado real de AE/OE del programa?
-- **C-015:** ¿qué fuente(s) reales usaste para Arquitectura Limpia/MVC/REST/microservicios?
-  ¿se conecta `Kaplan2009` con la sección de requerimientos o se elimina?
+- **C-007:** ninguna pregunta nueva — solo falta que envíes el archivo del diagrama cuando esté listo.
+- **C-010:** revisa el `\comment[id=XAV]` de precaución que dejé en el texto sugerido — confirma que
+  la descripción funcional genérica (gestión de clientes, saldos y transacciones) no revela nada
+  que prefieras mantener oculto.
+- **C-015:** ¿apruebas las 4 fuentes propuestas (Martin, Krasner & Pope, Fielding, Newman) para
+  agregarlas a `referencias.bib`? ¿`Kaplan2009` (ya existente, sin usar) se conecta con la sección
+  de requerimientos del Capítulo 2 o se elimina?
+- **C-013:** diferido — sin preguntas por ahora, se retoma cuando tú lo indiques.
 
 # Ruta del documento
 

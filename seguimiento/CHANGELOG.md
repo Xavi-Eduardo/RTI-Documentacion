@@ -72,8 +72,40 @@
 - Se actualizaron `contexto/CURRENT_STATUS.md` y este changelog. Ningún commit/push en ningún
   repositorio.
 
-## Pendiente para la próxima sesión (actualizado 2026-08-27)
-- Esperar que Xavier apruebe empezar a aplicar el bloque de 9 correcciones listas
-  (C-001, C-002, C-003, C-004, C-006, C-008, C-009, C-014, C-016).
-- Recopilar las respuestas a las 8 preguntas pendientes (ver `correcciones/correcciones.md`) para
-  las 7 correcciones restantes.
+## 2026-08-27 — Sesión 5 (respuestas de Xavier + investigación técnica/bibliográfica verificada)
+- Xavier respondió las 8 preguntas pendientes de la sesión anterior. Se actualizó
+  `correcciones/correcciones.md` con cada respuesta integrada, sin volver a auditar el repo
+  completo (se trabajó solo sobre el contexto ya existente + investigación puntual):
+  - **C-004:** confirmado ajuste de texto (no el literal).
+  - **C-005:** confirmado que "robusta y estable" era apreciación personal sin sustento — se quitó
+    el adjetivo, se mantiene solo la descripción factual citada.
+  - **C-007:** Xavier está elaborando un diagrama — se dejó texto introductorio/posterior y un
+    `figure` de marcador de posición, comentario marcado como parcialmente pendiente.
+  - **C-010:** confirmado que "Wali Fintech" NO debe aparecer (confidencial) — se redactó un
+    ejemplo concreto usando descripciones funcionales genéricas, sin nombres propios internos.
+  - **C-011:** se investigó y verificó en fuentes oficiales de Microsoft y AWS que la causa técnica
+    real no es "GitHub Actions dejó de compilar .NET 6" (impreciso) sino: (a) fin de soporte
+    oficial de .NET 6 el 12-nov-2024, y (b) AWS App Runner solo ofrecía .NET 6 como runtime
+    administrado y anunció el fin de soporte de ese runtime (1-dic-2025) sin agregar versiones más
+    recientes. Texto reescrito con la causa correcta y 2 referencias `.bib` verificadas.
+  - **C-012:** confirmado que la migración sí ocurrió. Se verificó que Node.js 19.x nunca fue un
+    runtime de AWS Lambda (Xavier recordaba mal), que 20.x (la versión que ya decía el documento)
+    sí es correcta, que tiene fin de soporte programado desde el 30-abr-2026, y que 24.x es un
+    runtime real vigente desde nov-2025. No hizo falta cambiar los números de versión del texto
+    original, solo agregar la justificación verificada.
+  - **C-013:** diferido a fase posterior por decisión explícita de Xavier, sin trabajarlo.
+  - **C-015:** investigación bibliográfica completa. Se proponen 4 fuentes verificadas (Robert C.
+    Martin para Clean Architecture, Krasner & Pope para MVC, Fielding para REST, Sam Newman para
+    microservicios), con entradas `.bib` completas y texto sugerido de dónde citarlas — pendiente
+    de aprobación de Xavier antes de tocar `referencias.bib`.
+- Resultado: de 16 comentarios, 13 quedaron listos para aplicar (antes 9), 1 pendiente de diagrama,
+  1 diferido, 1 pendiente de aprobación de fuentes. Ninguna corrección se aplicó todavía al `.tex`
+  ni al `.bib` — sigue pendiente la aprobación de Xavier para modificar el repositorio académico.
+- Se actualizaron `contexto/CURRENT_STATUS.md` y este changelog. Ningún commit/push en ningún
+  repositorio.
+
+## Pendiente para la próxima sesión (actualizado 2026-08-27, sesión 5)
+- Esperar aprobación de Xavier para aplicar el bloque de 13 correcciones listas.
+- Esperar aprobación de las 4 fuentes bibliográficas de C-015 antes de tocar `referencias.bib`.
+- Esperar el diagrama de C-007.
+- C-013 queda diferido hasta que Xavier lo retome explícitamente.
